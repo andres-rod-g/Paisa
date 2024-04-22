@@ -8,6 +8,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:paisa/core/enum/theme_mode.dart';
 import 'package:paisa/features/settings/presentation/widgets/choose_calendar_format_widget.dart';
 import 'package:paisa/features/settings/presentation/widgets/choose_theme_mode_widget.dart';
+import 'package:paisa/features/settings/presentation/widgets/auto_export_path_widget.dart';
 import 'package:paisa/features/settings/presentation/widgets/true_black_widget_theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -40,6 +41,7 @@ class SettingsPage extends StatelessWidget {
         ThemeMode.values[settings.get(themeModeKey, defaultValue: 0)];
     final currentFormat = CalendarFormats
         .values[settings.get(calendarFormatKey, defaultValue: 2)];
+    final currentAutoExportPath = settings.get(autoExportPath, defaultValue: '/');
     return PaisaAnnotatedRegionWidget(
       color: Colors.transparent,
       child: Scaffold(
@@ -83,6 +85,7 @@ class SettingsPage extends StatelessWidget {
                 const JustBlackWidget(),
                 const PaisaDivider(),
                 const SmallSizeFabWidget(),
+
               ],
             ),
             SettingsGroup(
@@ -130,6 +133,33 @@ class SettingsPage extends StatelessWidget {
                     const ExportAndImportPageData().push(context);
                   },
                 ),
+                const PaisaDivider(),
+                
+                SettingsOption(
+                  icon: MdiIcons.syncIcon,
+                  title: context.loc.autoExportPath,
+                  subtitle: context.loc.autoExportPathDescription,
+                  onTap: () {
+                    showModalBottomSheet(
+                      constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width >= 700
+                            ? 700
+                            : double.infinity,
+                      ),
+                      shape: const RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(16),
+                          topRight: Radius.circular(16),
+                        ),
+                      ),
+                      context: context,
+                      builder: (_) => DefaultAutoExportPathWidget(
+                        currentPath: currentAutoExportPath,
+                      ),
+                    );
+                  },
+                ),
+
               ],
             ),
             SettingsGroup(
