@@ -3,17 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hive/hive.dart';
 
-// Package imports:
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
 // Project imports:
 import 'package:paisa/config/routes.dart';
 import 'package:paisa/core/common.dart';
 import 'package:paisa/core/enum/box_types.dart';
-import 'package:paisa/core/use_case/use_case.dart';
 import 'package:paisa/core/widgets/paisa_widget.dart';
-import 'package:paisa/features/intro/domain/use_case/get_selected_country_use_case.dart';
-import 'package:paisa/features/settings/presentation/pages/app_language_changer_page.dart';
 import 'package:paisa/main.dart';
 
 class DefaultAutoExportPathWidget extends StatefulWidget {
