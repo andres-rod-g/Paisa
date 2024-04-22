@@ -615,6 +615,16 @@
         "description": "Text shown on the button on settings screen",
         "type": "text"
     },
+    "autoExportPath": "Auto export path",
+    "@autoExportPath": {
+        "description": "Text shown on the button on settings screen",
+        "type": "text"
+    },
+    "autoExportPathDescription": "Path where saves are going to be saver after every action. In order to allow you use extern backup and sync tools",
+    "@autoExportPathDescription": {
+        "description": "Text shown on the button on settings screen",
+        "type": "text"
+    },
     "expenseByCategory": "Expense by category",
     "@expenseByCategory": {
         "description": "Text shown on the toolbar title",
