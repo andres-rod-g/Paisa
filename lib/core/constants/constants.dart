@@ -28,6 +28,7 @@ const String selectedHomeFilterExpenseKey = 'selected_home_filter_expense_key';
 const String defaultAccountIdKey = 'default_account_id_key';
 const String excludedAccountIdKey = 'excluded_account_key';
 const String calendarFormatKey = 'calendar_format_key';
+const String autoExportPath = 'auto_export_path';
 const String appLanguageKey = 'app_language_key';
 const String appFontChangerKey = 'app_font_changer_key';
 const buyMeCoffeeUrl = 'https://www.buymeacoffee.com/h4h13';
