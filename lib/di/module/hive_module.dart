@@ -51,7 +51,7 @@ abstract class HiveBoxModule {
   @lazySingleton
   @preResolve
   Future<Box<GoalModel>> get goalBox =>
-      Hive.openBox<GoalModel>(BoxType.recurring.name);
+      Hive.openBox<GoalModel>(BoxType.goal.name);
 
   @lazySingleton
   @preResolve
